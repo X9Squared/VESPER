@@ -9,7 +9,6 @@ module.exports = {
     };
     message.channel.send("Are you sure you want to close VESPER?").then(sentMessage => {
       sentMessage.react("✅")
-      console.log("check1");
       sentMessage.awaitReactions(filter, {
           max: 4,
           time: 5000,
