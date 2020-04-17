@@ -8,7 +8,8 @@ module.exports = {
       return reaction.emoji.name === '✅' && user.id === message.author.id;
     };
     message.channel.send("Are you sure you want to close VESPER?").then(sentMessage => {
-      sentMessage.react("✅");
+      sentMessage.react("✅")
+      console.log("check1");
       sentMessage.awaitReactions(filter, {
           max: 4,
           time: 5000,
@@ -18,7 +19,7 @@ module.exports = {
         .catch(collected => {
           console.log(collected.size);
           if (collected.size > 0) {
-            message.channel.send("VESPER closing.");
+            console.log("VESPER closing...");
             index.discClient.destroy();
           } else {
             message.channel.send("No confirmation recieved.");
