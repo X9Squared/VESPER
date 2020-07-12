@@ -19,6 +19,6 @@ module.exports = {
             console.log("viper react test");
           }
         });
-    })
-  },*/
+    })*/
+  },
 };
