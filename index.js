@@ -25,10 +25,15 @@ client.on('message', message => {
 	if (!client.commands.has(commandName)) return;
 	const command = client.commands.get(commandName);
 
+	if(commandName.args && !args.length) {
+		return message.channel.send("You didn't provide any arguments, dummy ${message.author}!");
+	}
+
 	try {
 		command.execute(message,args);
 	} catch (error) {
 		console.error(error);
+		console.log("There was a problem executing that command.");
 	}
 });
 

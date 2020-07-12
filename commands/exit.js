@@ -3,6 +3,7 @@ const index = require("D:\\Personal Files\\VESPER\\index.js");
 module.exports = {
   name: 'exit',
   description: 'Closes bot user (requires additional confirmation).',
+  args: false,
   execute(message, args) {
     const filter = (reaction, user) => {
       return reaction.emoji.name === '✅' && user.id === message.author.id;
