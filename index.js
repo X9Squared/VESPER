@@ -38,13 +38,10 @@ client.on('message', message => {
 	const now = Date.now();
 	const timestamps = cooldowns.get(command.name);
 	const cooldownAmount = (command.cooldown || 3) * 1000;
-	console.log(cooldownAmount + "cooldownamount");
 	if (timestamps.has(message.author.id)) {
 		const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
-		console.log(expirationTime);
 		if (now < expirationTime) {
 			const timeLeft = (expirationTime - now) / 1000;
-			console.log(timeLeft);
 			return message.reply("please wait " + timeLeft.toFixed(1) + " more second(s) before reusing the " + command.name + " command.")
 		}	
 	}
