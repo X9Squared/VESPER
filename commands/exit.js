@@ -20,7 +20,7 @@ module.exports = {
           console.log(collected.size);
           if (collected.size > 0) {
             console.log("VESPER closing...");
-            index.discClient.desatroy();
+            index.discClient.destroy();
           } else {
             message.channel.send("No confirmation recieved.");
           }
