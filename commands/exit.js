@@ -11,8 +11,8 @@ module.exports = {
     message.channel.send("Are you sure you want to close VESPER?").then(sentMessage => {
       sentMessage.react("✅")
       sentMessage.awaitReactions(filter, {
-          max: 4,
-          time: 5000,
+          max: 1,
+          time: 3000,
           errors: ['time']
         })
         .then(collected => console.log(collected.size))
@@ -20,7 +20,7 @@ module.exports = {
           console.log(collected.size);
           if (collected.size > 0) {
             console.log("VESPER closing...");
-            index.discClient.destroy();
+            index.discClient.desatroy();
           } else {
             message.channel.send("No confirmation recieved.");
           }
