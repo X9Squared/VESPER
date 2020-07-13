@@ -11,7 +11,7 @@ module.exports = {
     message.channel.send("Are you sure you want to close VESPER?").then(sentMessage => {
       sentMessage.react("✅")
       sentMessage.awaitReactions(filter, {
-          max: 1,
+          max: 2,
           time: 3000,
           errors: ['time']
         })
